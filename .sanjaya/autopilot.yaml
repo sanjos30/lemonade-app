@@ -1,0 +1,17 @@
+project_name: lemonade-app
+language: python
+tech_stack: fastapi
+dirs:
+  backend_dir: backend
+  tests_dir: backend/tests
+  frontend_dir: frontend
+runtime:
+  backend_fastapi:
+    install_command: python -m venv backend/.venv && . backend/.venv/bin/activate
+      && pip install --upgrade pip && pip install -r backend/requirements.txt
+    dev_command: cd backend && . .venv/bin/activate && uvicorn app.main:app --host
+      127.0.0.1 --port 8000
+    test_command: cd backend && . .venv/bin/activate && pytest -q
+metadata:
+  repo_full_name: sanjos30/lemonade-app
+  default_branch: main

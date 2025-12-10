@@ -1,0 +1,87 @@
+project_meta:
+  name: lemonade-app
+  description: Lemonade Stand Planner demo app
+  confidence: 0.85
+  min_confidence_required: 0.75
+project_type:
+  value: demo
+  options:
+  - demo
+  - internal_tool
+  - production
+  description: How serious is this project?
+architecture:
+  ui:
+    value: web
+    options:
+    - none
+    - web
+    - mobile
+    description: Does this project have a UI, and of what kind?
+  backend:
+    value: fastapi
+    options:
+    - fastapi
+    - node
+    - none
+    description: Primary backend stack
+ui_details:
+  framework:
+    value: nextjs
+    options:
+    - nextjs
+    - react
+    - none
+    description: If ui != none, which framework?
+  pages:
+    value:
+    - landing
+    - form
+    options:
+    - landing
+    - dashboard
+    - form
+    description: Key pages to scaffold
+auth:
+  enabled:
+    value: false
+    description: Is authentication required?
+  providers:
+    value: []
+    options:
+    - email_password
+    - oauth_google
+    - none
+    description: Auth providers (ignored if enabled=false)
+data:
+  persistence:
+    value: none
+    options:
+    - none
+    - sqlite
+    - postgres
+    description: Data persistence choice
+  multi_user:
+    value: false
+    description: Does the project need multi-user separation?
+constraints:
+  complexity:
+    value: toy
+    options:
+    - toy
+    - simple
+    - realistic
+    description: How close to real-world production should we get?
+  monitoring:
+    value: true
+    description: Should logs/monitoring be baked in? (for MonitorAgent demos)
+  tests_required:
+    value: true
+    description: Should Codegen enforce tests for new code?
+  out_of_scope:
+    value: []
+    description: Features that must NOT be designed, scaffolded, or mentioned (e.g.,
+      ['payments', 'notifications', 'admin panel'])
+intent:
+  locked: false
+  description: Locked intent forces strict compliance mode, preventing LLM drift
